@@ -1,0 +1,4 @@
+@mixin contrast-font($color){
+    color: $color;
+    text-shadow: 1px 1px 10px invert($color), -1px -1px 10px invert($color);
+}

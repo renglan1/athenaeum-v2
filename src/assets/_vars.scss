@@ -15,3 +15,6 @@ $large-and-down: "only screen and (max-width : #{$large-screen})" !default;
 $medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
 $medium-and-large: "only screen and (min-width: #{$small-screen-up}) and (max-width : #{$large-screen})" !default;
 $above-large: "only screen and (min-width: #{$large-screen-up})" !default;
+
+$settings-menu-height: 12vh;
+$background-select-height: 23vh;

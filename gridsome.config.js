@@ -7,5 +7,6 @@
 module.exports = {
   siteName: 'Athenaeum',
   siteDescription: 'Athenaeum is a heavily styled wiki for some of Aetha\'s favorite video game characters.',
+  icon: './src/favicon.png',
   plugins: []
 }
