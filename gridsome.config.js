@@ -5,6 +5,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'Athenaeum',
+  siteDescription: 'Athenaeum is a heavily styled wiki for some of Aetha\'s favorite video game characters.',
   plugins: []
 }
