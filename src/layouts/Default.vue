@@ -1,6 +1,7 @@
 <template>
-  <div class="layout">
+  <div>
     <Header/>
+    <Background/>
     <slot />
   </div>
 </template>
@@ -15,10 +16,12 @@ query {
 
 <script>
 import Header from "~/components/Header.vue";
+import Background from "~/components/Background.vue";
 
 export default{
   components: {
-    Header
+    Header,
+    Background
   },
 };
 

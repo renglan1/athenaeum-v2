@@ -8,5 +8,13 @@ module.exports = {
   siteName: 'Athenaeum',
   siteDescription: 'Athenaeum is a heavily styled wiki for some of Aetha\'s favorite video game characters.',
   icon: './src/favicon.png',
-  plugins: []
+  plugins: [
+    {
+      use: 'gridsome-plugin-composition-api',
+    }
+  ],
+  chainWebpack: config => {
+    config.resolve.alias.set('@images', '@/assets/images'),
+    config.resolve.alias.set('@videos', '@/assets/videos')
+  }
 }

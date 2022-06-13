@@ -7,9 +7,12 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.6.2",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
+    "assets-loader": "^0.5.2",
+    "gridsome-plugin-composition-api": "^0.0.3",
     "sass": "^1.52.3",
     "sass-loader": "^10.1.1",
     "webpack-node-externals": "^3.0.0"
