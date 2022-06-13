@@ -24,8 +24,9 @@ query {
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/vars.scss';
-@import '~/assets/font-styles.scss';
+@import '~/assets/vars';
+@import '~/assets/font-styles';
+@import '~/assets/icomoon/icomoon';
 
 header {
   position: absolute;
