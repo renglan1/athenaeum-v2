@@ -1,17 +1,17 @@
 <template>
   <div id="background-container">
-    <g-image
-      :src="require(`!!assets-loader!@images/backgrounds/${bgName}.png`)"
-      alt=""
-    />
+    <div id="overlay"></div>
     <video
-      v-if="true"
+      v-show="fxOn"
       preload="none"
       loop
       autoplay
-      :src="require(`!!assets-loader!@videos/backgrounds/4k/${bgName}.mp4`)"
+      :src="bgVideoUrl"
     ></video>
-    <div id="overlay"></div>
+    <g-image
+      :src="bgImageUrl"
+      alt=""
+    />
   </div>
 </template>
 
@@ -25,6 +25,16 @@ export default {
   computed: {
     bgName(){
       return localStorage.bgName ? localStorage.bgName : 'neptune';
+    },
+    fxOn(){
+      return localStorage.fxOn ? true : false;
+    },
+    bgImageUrl(){
+      return require(`!!assets-loader!@images/backgrounds/${this.bgName}.png`);
+    },
+    bgVideoUrl(){
+      let video = require(`!!assets-loader!@videos/backgrounds/4k/${this.bgName}.mp4`)
+      return video.src;
     }
   }
 };
