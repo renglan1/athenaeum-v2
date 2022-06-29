@@ -1,7 +1,7 @@
 <template>
   <div id="background-container">
     <g-image
-      :src="require(`!!assets-loader!@images/backgrounds/neptune.png`)"
+      :src="require(`!!assets-loader!@images/backgrounds/${bgName}.png`)"
       alt=""
     />
     <video
@@ -9,20 +9,24 @@
       preload="none"
       loop
       autoplay
-      :src="require(`!!assets-loader!@videos/backgrounds/4k/neptune.mp4`)"
+      :src="require(`!!assets-loader!@videos/backgrounds/4k/${bgName}.mp4`)"
     ></video>
     <div id="overlay"></div>
   </div>
 </template>
 
 <script>
-//import { fx, background } from "~/utils/store.js";
 export default {
   data() {
     return {
 
     };
   },
+  computed: {
+    bgName(){
+      return localStorage.bgName ? localStorage.bgName : 'neptune';
+    }
+  }
 };
 </script>
 

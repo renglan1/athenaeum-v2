@@ -3,7 +3,12 @@
     <header>
       <span class="icon-athenaeum"></span>
       <h1 title="Ah-thuh-nee-im">
-        <span v-for="char in $static.metadata.siteName">{{char}}</span>
+        <span 
+          v-for="(char, i) in $static.metadata.siteName"
+          :key="i"
+        >
+          {{char}}
+        </span>
       </h1>
     </header>
   </div>

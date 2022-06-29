@@ -1,4 +1,4 @@
-<template>
+ <template>
   <Layout>
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images
