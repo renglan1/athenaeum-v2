@@ -80,17 +80,5 @@ export default {
 
     object-fit: cover;
   }
-
-  img{
-    z-index: 1;
-  }
-
-  video{
-    z-index: 2;
-  }
-
-  div {
-    z-index: 3;
-  }
 }
 </style>
