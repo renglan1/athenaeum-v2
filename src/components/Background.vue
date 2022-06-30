@@ -6,12 +6,11 @@
     />
     <video
       v-show="fxOn"
-      preload="none"
       loop
       autoplay
       :src="bgVideoUrl"
     ></video>
-    <div id="overlay">Hi!</div>
+    <div id="overlay" @click="bgName = 'neptune'"></div>
   </div>
 </template>
 
@@ -19,16 +18,21 @@
 export default {
   data() {
     return {
-
+      get bgName(){
+        return localStorage.getItem('bgName') || 'neptune';
+      },
+      set bgName(bgName){
+        return localStorage.setItem('bgName', bgName);
+      },
+      get fxOn(){
+        return localStorage.getItem('fxOn') || false;
+      },
+      set fxOn(fxOn){
+        return localStorage.setItem('fxOn', fxOn);
+      },
     };
   },
   computed: {
-    bgName(){
-      return localStorage.bgName ? localStorage.bgName : 'neptune';
-    },
-    fxOn(){
-      return localStorage.fxOn ? true : false;
-    },
     bgImageUrl(){
       return require(`!!assets-loader!@images/backgrounds/${this.bgName}.png`);
     },
@@ -36,7 +40,7 @@ export default {
       let video = require(`!!assets-loader!@videos/backgrounds/4k/${this.bgName}.mp4`)
       return video.src;
     }
-  }
+  },
 };
 </script>
 
