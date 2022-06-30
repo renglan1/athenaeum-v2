@@ -14,6 +14,10 @@ query {
 }
 </static-query>
 
+<style lang="scss" scoped>
+
+</style>
+
 <script>
 import Header from "~/components/Header.vue";
 import Background from "~/components/Background.vue";
@@ -26,6 +30,3 @@ export default{
 };
 
 </script>
-
-<style>
-</style>

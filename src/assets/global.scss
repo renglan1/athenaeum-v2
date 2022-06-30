@@ -30,3 +30,26 @@ header{
   @include contrast-font(white);
   font-family: main;
 }
+
+h1{
+  font-size: scale-font($h1-font-size, 0);
+  font-weight: 700;
+}
+
+@media #{$mobile-and-up} {
+  h1{
+    font-size: scale-font($h1-font-size, 1);
+  }
+}
+
+@media #{$desktop-small-and-up} {
+  h1{
+    font-size: scale-font($h1-font-size, 2);
+  }
+}
+
+@media #{$desktop-and-up} {
+  h1{
+    font-size: scale-font($h1-font-size, 3);
+  }
+}

@@ -1,15 +1,14 @@
 <template>
   <div>
     <header>
-      <span class="icon-athenaeum"></span>
-      <h1 title="Ah-thuh-nee-im">
-        <span 
-          v-for="(char, i) in $static.metadata.siteName"
-          :key="i"
-        >
-          {{char}}
-        </span>
-      </h1>
+      <a href="/">
+        <span class="icon-athenaeum"></span>
+        <h1 title="Ah-thuh-nee-im">
+          <span v-for="(char, i) in $static.metadata.siteName" :key="i">
+            {{ char }}
+          </span>
+        </h1>
+      </a>
     </header>
   </div>
 </template>
@@ -23,60 +22,70 @@ query {
 </static-query>
 
 <script>
-    export default{
-        name: 'Header',
-    };
+export default {
+  name: "Header",
+};
 </script>
 
 <style lang="scss" scoped>
-@import '~/assets/vars';
-@import '~/assets/font-styles';
-@import '~/assets/icomoon/icomoon';
+@import "~/assets/vars";
+@import "~/assets/font-styles";
+@import "~/assets/icomoon/icomoon";
 
 header {
   position: absolute;
-  top: 1em;
+  top: 7.5%;
   width: 100%;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  font-size: 3em;
-  font-weight: 700;
-
   text-transform: uppercase;
+  user-select: none;
+  overflow: hidden;
 
-  h1 {
-    flex: 0 0 60%;
+  h1{
     display: flex;
+    flex: 0 0 60%;
     justify-content: space-between;
   }
 
-  span {
+  a {
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    column-gap: 2.25%;
+    margin: 0 2.5%;
+
     &:hover {
-      cursor: default;
+      cursor: pointer;
+    }
+
+    &:visited {
+      color: inherit;
     }
   }
+}
 
+.icon-athenaeum {
+  &::before {
+    font-size: $logo-font-size;
+  }
+}
+
+@media #{$mobile-and-up} {
   .icon-athenaeum:before {
-    font-size: 2em;
+    font-size: scale-font($logo-font-size, 1);
   }
+}
 
-  .icon-athenaeum {
-    margin-right: 0.5em;
+@media #{$desktop-small-and-up}{
+  .icon-athenaeum:before {
+    font-size: scale-font($logo-font-size, 2);
   }
+}
 
-  @media #{$large-and-down} {
-    font-size: 3.5em;
-  }
-
-  @media #{$above-large} {
-    font-size: 4.5em;
-  }
-
-  @media #{$small-and-down} {
-    font-size: 2em;
+@media #{$desktop-and-up}{
+  .icon-athenaeum:before {
+    font-size: scale-font($logo-font-size, 3);
   }
 }
 </style>
