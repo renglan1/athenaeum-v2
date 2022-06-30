@@ -21,16 +21,10 @@ query {
 }
 </static-query>
 
-<script>
-export default {
-  name: "Header",
-};
-</script>
-
 <style lang="scss" scoped>
-@import "~/assets/vars";
-@import "~/assets/font-styles";
-@import "~/assets/icomoon/icomoon";
+@use "~/assets/_vars.scss";
+@use "~/assets/_font-styles";
+@use "~/assets/icomoon/icomoon.scss";
 
 header {
   position: absolute;
@@ -67,25 +61,31 @@ header {
 
 .icon-athenaeum {
   &::before {
-    font-size: $logo-font-size;
+    font-size: font-styles.$logo-font-size;
   }
 }
 
-@media #{$mobile-and-up} {
+@media #{vars.$mobile-and-up} {
   .icon-athenaeum:before {
-    font-size: scale-font($logo-font-size, 1);
+    font-size: font-styles.scale-font(font-styles.$logo-font-size, 1);
   }
 }
 
-@media #{$desktop-small-and-up}{
+@media #{vars.$desktop-small-and-up}{
   .icon-athenaeum:before {
-    font-size: scale-font($logo-font-size, 2);
+    font-size: font-styles.scale-font(font-styles.$logo-font-size, 2);
   }
 }
 
-@media #{$desktop-and-up}{
+@media #{vars.$desktop-and-up}{
   .icon-athenaeum:before {
-    font-size: scale-font($logo-font-size, 3);
+    font-size: font-styles.scale-font(font-styles.$logo-font-size, 3);
   }
 }
 </style>
+
+<script>
+export default {
+  name: "Header",
+};
+</script>

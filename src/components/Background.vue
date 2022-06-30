@@ -14,6 +14,41 @@
   </div>
 </template>
 
+<style lang="scss" scoped>
+@use "~/assets/vars";
+
+#background-container {
+  position: absolute;
+  display: flex;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0em 1em;
+  z-index: -1000;
+
+  @media only screen and (min-width: 798px) {
+    padding: 0em 2.5em;
+  }
+
+  #overlay {
+    min-height: 100vh;
+    background-color: #001629;
+    opacity: 0.2;
+  }
+
+  * {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+}
+</style>
+
 <script>
 export default {
   data() {
@@ -43,42 +78,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss" scoped>
-@import "~/assets/vars";
-
-#background-container {
-  position: absolute;
-  display: flex;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  padding: 0em 1em;
-  z-index: -1000;
-
-  @media only screen and (min-width: 798px) {
-    padding: 0em 2.5em;
-  }
-
-  &.active {
-    bottom: $settings-menu-height;
-  }
-
-  #overlay {
-    min-height: 100vh;
-    background-color: #001629;
-    opacity: 0.2;
-  }
-
-  * {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-  }
-}
-</style>
