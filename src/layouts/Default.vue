@@ -3,6 +3,7 @@
     <Header/>
     <Background/>
     <slot />
+    <SettingsMenu/>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="control-container">
-      <i id="control" class="fa-solid fa-ellipsis"></i>
+      <fa-icon id="control" icon="fa-solid fa-ellipsis"/>
     </div>
   </div>
 </template>
@@ -34,5 +34,9 @@
 </style>
 
 <script>
-export default {};
+export default {
+    components: {
+        //FontAwesomeIcon
+    }
+};
 </script>

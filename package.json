@@ -7,10 +7,14 @@
     "explore": "gridsome explore"
   },
   "dependencies": {
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@vue/composition-api": "^1.6.2",
     "gridsome": "^0.7.0"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/vue-fontawesome": "^2.0.8",
     "assets-loader": "^0.5.2",
     "gridsome-plugin-composition-api": "^0.0.3",
     "sass": "^1.52.3",
