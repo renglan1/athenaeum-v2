@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "build": "SET NODE_OPTIONS=--openssl-legacy-provider && gridsome build",
-    "develop": "SET NODE_OPTIONS=--openssl-legacy-provider && gridsome develop",
+    "develop": "gridsome develop",
     "explore": "gridsome explore"
   },
   "dependencies": {

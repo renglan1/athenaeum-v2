@@ -1,6 +1,9 @@
 <template>
   <div id="background-container">
-    <div id="overlay"></div>
+    <g-image
+      :src="bgImageUrl"
+      alt=""
+    />
     <video
       v-show="fxOn"
       preload="none"
@@ -8,10 +11,7 @@
       autoplay
       :src="bgVideoUrl"
     ></video>
-    <g-image
-      :src="bgImageUrl"
-      alt=""
-    />
+    <div id="overlay">Hi!</div>
   </div>
 </template>
 
@@ -75,6 +75,18 @@ export default {
     height: 100%;
 
     object-fit: cover;
+  }
+
+  img{
+    z-index: 1;
+  }
+
+  video{
+    z-index: 2;
+  }
+
+  div {
+    z-index: 3;
   }
 }
 </style>
