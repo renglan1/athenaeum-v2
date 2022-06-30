@@ -1,21 +1,14 @@
 <template>
   <div id="background-container">
-    <g-image
-      :src="bgImageUrl"
-      alt=""
-    />
-    <video
-      v-show="fxOn"
-      loop
-      autoplay
-      :src="bgVideoUrl"
-    ></video>
+    <g-image :src="bgImageUrl" alt="" />
+    <video v-show="fxOn" loop autoplay :src="bgVideoUrl"></video>
     <div id="overlay" @click="bgName = 'neptune'"></div>
   </div>
 </template>
 
 <style lang="scss" scoped>
 @use "~/assets/vars";
+@use '~/assets/_font-styles.scss';
 
 #background-container {
   position: absolute;
@@ -53,28 +46,28 @@
 export default {
   data() {
     return {
-      get bgName(){
-        return localStorage.getItem('bgName') || 'neptune';
+      get bgName() {
+        return localStorage.getItem("bgName") || "neptune";
       },
-      set bgName(bgName){
-        return localStorage.setItem('bgName', bgName);
+      set bgName(bgName) {
+        return localStorage.setItem("bgName", bgName);
       },
-      get fxOn(){
-        return localStorage.getItem('fxOn') || false;
+      get fxOn() {
+        return localStorage.getItem("fxOn") || false;
       },
-      set fxOn(fxOn){
-        return localStorage.setItem('fxOn', fxOn);
+      set fxOn(fxOn) {
+        return localStorage.setItem("fxOn", fxOn);
       },
     };
   },
   computed: {
-    bgImageUrl(){
+    bgImageUrl() {
       return require(`!!assets-loader!@images/backgrounds/${this.bgName}.png`);
     },
-    bgVideoUrl(){
-      let video = require(`!!assets-loader!@videos/backgrounds/4k/${this.bgName}.mp4`)
+    bgVideoUrl() {
+      let video = require(`!!assets-loader!@videos/backgrounds/4k/${this.bgName}.mp4`);
       return video.src;
-    }
+    },
   },
 };
 </script>

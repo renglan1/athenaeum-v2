@@ -1,9 +1,14 @@
 <template>
   <div>
     <Header/>
-    <Background/>
+    
+    <div id="page" @settings-menu-translated="translatePage">
+      <Background/>
+    </div>
+
     <slot />
-    <SettingsMenu/>
+
+    <MirrorMenu type="settings"/>
   </div>
 </template>
 
@@ -22,13 +27,19 @@ query {
 <script>
 import Header from "~/components/Header.vue";
 import Background from "~/components/Background.vue";
-import SettingsMenu from "~/components/settings-menu/SettingsMenu.vue";
+import MirrorMenu from "~/components/MirrorMenu.vue";
 
 export default{
   components: {
     Header,
     Background,
-    SettingsMenu
+    MirrorMenu
+  },
+  methods: {
+    translatePage(percent) {
+      const page = document.getElementById("page");
+      page.style.transform = `translateX(-${percent}%)`;
+    },
   },
 };
 
