@@ -1,14 +1,16 @@
 <template>
   <div>
+    <MirrorMenu type="settings"/>
+
     <Header/>
-    
-    <div id="page" @settings-menu-translated="translatePage">
+
+    <div id="background" @settings-menu-translated="translateBackground">
       <Background/>
     </div>
 
     <slot />
 
-    <MirrorMenu type="settings"/>
+    
   </div>
 </template>
 
@@ -36,9 +38,9 @@ export default{
     MirrorMenu
   },
   methods: {
-    translatePage(percent) {
-      const page = document.getElementById("page");
-      page.style.transform = `translateX(-${percent}%)`;
+    translateBackground(percent) {
+      const background = document.getElementById("background");
+      background.style.transform = `translateX(${percent}%)`;
     },
   },
 };

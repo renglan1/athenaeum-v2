@@ -9,7 +9,8 @@ $mobile: 768px !default;
 $desktop-small: 1024px !default;
 $desktop: 1440px !default;
 
-$mobile-and-up: "only screen and (min-width: #{$mobile-small-up})" !default;
+$mobile-small-and-up: "only screen and (min-width: #{mobile-small-up})" !default;
+$mobile-and-up: "only screen and (min-width: #{$mobile-up})" !default;
 $desktop-small-and-up: "only screen and (min-width: #{$desktop-small-up})" !default;
 $desktop-and-up: "only screen and (min-width: #{$desktop-up})" !default;
 

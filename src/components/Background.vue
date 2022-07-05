@@ -17,9 +17,9 @@
   width: 100%;
   height: 100%;
   padding: 0em 1em;
-  z-index: -1000;
+  z-index: -1000; 
 
-  @media only screen and (min-width: 798px) {
+  @media #{vars.$mobile-and-up} {
     padding: 0em 2.5em;
   }
 

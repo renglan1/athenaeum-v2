@@ -3,18 +3,18 @@
     <div id="settings-options">
       <i
         id="toggle-fx-button"
-        class="settings-option fa-solid fa-wand-magic-sparkles"
+        class="settings-option" 
+        icon="fa-solid fa-wand-magic-sparkles"
       ></i>
       <i
         id="background-select-button"
-        class="settings-option fa-solid fa-image settings-option"
+        class="settings-option"
+        icon="fa-solid fa-image"
       ></i>
       <fa-icon 
         id="volume-button"
-        class="
-          settings-option
-          fa-solid fa-volume-xmark
-        "
+        class="settings-option"
+        icon="fa-solid fa-volume-xmark"
       ></fa-icon >
     </div>
     <div id="settings-background-select">

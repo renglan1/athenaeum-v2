@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header-container">
     <header>
       <a href="/">
         <span class="icon-athenaeum"></span>
