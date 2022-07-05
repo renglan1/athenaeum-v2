@@ -1,16 +1,15 @@
 <template>
   <div>
-    <MirrorMenu type="settings"/>
+    <MirrorMenu type="settings" v-on:settings-translated="translateBackground($event)"/>
 
     <Header/>
 
-    <div id="background" @settings-menu-translated="translateBackground">
-      <Background/>
+    <div class="background-container">
+      <Background type="main"/>
     </div>
 
     <slot />
 
-    
   </div>
 </template>
 
@@ -39,8 +38,8 @@ export default{
   },
   methods: {
     translateBackground(percent) {
-      const background = document.getElementById("background");
-      background.style.transform = `translateX(${percent}%)`;
+      const background = document.querySelector("div.main.background");
+      background.style.transform = `translateY(${percent}%)`;
     },
   },
 };

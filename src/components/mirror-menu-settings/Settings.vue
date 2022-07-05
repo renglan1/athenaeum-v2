@@ -1,23 +1,20 @@
 <template>
-  <div id="settings">
-    <div id="settings-options">
+  <div class="settings">
+    <div class="options">
       <i
-        id="toggle-fx-button"
-        class="settings-option" 
+        class="toggle-fx-button option" 
         icon="fa-solid fa-wand-magic-sparkles"
       ></i>
       <i
-        id="background-select-button"
-        class="settings-option"
+        class="background-select-button option"
         icon="fa-solid fa-image"
       ></i>
       <fa-icon 
-        id="volume-button"
-        class="settings-option"
+        class="volume-button option"
         icon="fa-solid fa-volume-xmark"
       ></fa-icon >
     </div>
-    <div id="settings-background-select">
+    <div class="background-select">
       <div id="background-select-options"></div>
     </div>
   </div>
@@ -27,7 +24,7 @@
 @use "~/assets/vars";
 @use "~/assets/_font-styles.scss";
 
-#settings {
+.settings {
   @include font-styles.contrast-font(white);
 
   position: absolute;
@@ -44,7 +41,7 @@
   justify-content: center;
 }
 
-#settings-options {
+.options {
   flex: 0 0 100%;
 
   min-height: vars.$settings-height;
@@ -57,7 +54,7 @@
   opacity: 0;
   transition: opacity 0.75s;
 
-  .settings-option {
+  .option {
     font-size: 4vh;
     margin: 0.1em 0em;
 

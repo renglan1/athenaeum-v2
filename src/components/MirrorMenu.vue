@@ -1,15 +1,15 @@
 <template>
-  <div id="mirror-menu-container">
+  <div :class="`${type} mirror-menu`">
     <div 
-        id="control-container" 
-        @mouseenter="translateMirrorMenu(5)"
-        @mouseleave="translateMirrorMenu(-5)"
+        class="control-container" 
+        @mouseenter="translateMirrorMenu(12)"
+        @mouseleave="translateMirrorMenu(-12)"
     >
-      <fa-icon id="control" icon="fa-solid fa-ellipsis" />
+      <fa-icon :class="`${type} control`" icon="fa-solid fa-ellipsis" />
     </div>
-    <div id="mirror-menu">
-      <div id="mirror-menu-background-container">
-        <Background />
+    <div :class="`${type} items`">
+      <div class="background-container">
+        <Background :type="`${type}`"/>
         <Settings />
       </div>
     </div>
@@ -19,14 +19,14 @@
 <style lang="scss" scoped>
 @use "~/assets/_font-styles.scss";
 
-#mirror-menu-container {
+.mirror-menu {
   position: absolute;
   width: 100vw;
   height: 100vh;
   overflow-y: clip;
 }
 
-#mirror-menu {
+.items {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -35,7 +35,7 @@
   overflow-y: visible;
 }
 
-#control-container {
+.control-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
   left: 50%;
   transform: translateX(-50%);
 
-  #control {
+  .control {
     @include font-styles.contrast-font(white);
 
     font-size: 2vh;
@@ -75,10 +75,18 @@ export default {
     },
   },
   methods: {
-    translateMirrorMenu(percent) {
-      const mirrorMenu = document.getElementById("mirror-menu");
-      mirrorMenu.style.transform = `translateY(100vh) translateX(${percent}%)`;
-      this.$root.$emit("settings-translated", percent);
+    translateMirrorMenu(percent){
+      //this.translateControl(percent);
+      this.translateItems(percent);
+      this.$root.$emit(`${this.type}-translated`, percent);
+    },
+    translateControl(percent){
+      const control = document.querySelector(`.${this.type}.control`);
+      control.style.transform = `translateY(${percent}%)`;
+    },
+    translateItems(percent) {
+      const items = document.querySelector(`.${this.type}.items`);
+      items.style.transform = `translateY(calc(100vh - ${percent}%))`;
     },
   },
 };

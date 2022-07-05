@@ -1,8 +1,8 @@
 <template>
-  <div id="background-container">
+  <div :class="`${type} background`">
     <g-image :src="bgImageUrl" alt="" />
     <video v-show="fxOn" loop autoplay :src="bgVideoUrl"></video>
-    <div id="overlay" @click="bgName = 'neptune'"></div>
+    <div class="overlay" @click="bgName = 'neptune'"></div>
   </div>
 </template>
 
@@ -10,7 +10,7 @@
 @use "~/assets/vars";
 @use '~/assets/_font-styles.scss';
 
-#background-container {
+.background {
   position: absolute;
   display: flex;
   bottom: 0;
@@ -23,7 +23,7 @@
     padding: 0em 2.5em;
   }
 
-  #overlay {
+  .overlay {
     min-height: 100vh;
     background-color: #001629;
     opacity: 0.2;
@@ -69,5 +69,11 @@ export default {
       return video.src;
     },
   },
+  props: {
+    type: {
+      type: String,
+      required: true,
+    },
+  }
 };
 </script>
